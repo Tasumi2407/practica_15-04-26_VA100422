@@ -16,6 +16,10 @@ body{
     text-align: center;
 }
 
+.hidden{
+    display: none;
+}
+
 #lienzo_uno{
     border: 2px solid red;
 }
@@ -23,6 +27,11 @@ body{
 #lienzo_dos{
     border: 2px solid greenyellow;
 }
+
+#lienzo_dos-hidden{
+    border: 2px solid #ffa239;
+}
+
 #lienzo_tres{
     border: 2px solid skyblue;
 }

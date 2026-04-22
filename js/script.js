@@ -1,7 +1,37 @@
+var canvas_dos = document.getElementById("lienzo_dos");
+var canvas_dos_hidden = document.getElementById("lienzo_dos-hidden");
 var canvas_tres = document.getElementById("lienzo_tres");
 var canvas_cuatro = document.getElementById("lienzo_cuatro");
 var canvas_cinco= document.getElementById("lienzo_cinco");
 var canvas_seis = document.getElementById("lienzo_seis");
+
+if(canvas_dos.getContext){
+
+    var ctx_2 = canvas_dos.getContext("2d");
+    var img = new Image();
+    img.src = 'media/icons/rip_icon.png';
+    img.onload = function(){
+        ctx_2.drawImage(img,0,0,canvas_dos.width,canvas_dos.height);
+    };
+
+
+}else{
+    console.log("No se si soporta el contexto")
+}
+
+
+if(canvas_dos_hidden.getContext){
+
+    var ctx_2_hidden = canvas_dos_hidden.getContext("2d");
+    var img = document.getElementById("imagen");
+
+    img.addEventListener("load",(e)=> {
+        ctx_2_hidden.drawImage(img,0,0,150,150);
+    });
+
+}else{
+    console.log("No se si soporta el contexto")
+}
 
 if(canvas_tres.getContext){
     console.log("si soporta contexto");
@@ -34,10 +64,37 @@ if(canvas_cuatro.getContext){
 
 
 if(canvas_cinco.getContext){
-    console.log("si soporta contexto");
+
+    var ctx_5 =canvas_cinco.getContext("2d");
+    ctx_5.beginPath();
+    ctx_5.setLineDash([5,15]);
+    ctx_5.moveTo(0,40);
+    ctx_5.lineTo(150,40);
+    ctx_5.strokeStyle ='#FFFFFF';
+    ctx_5.stroke();
+
+    ctx_5.beginPath();
+    ctx_5.setLineDash([]);
+    ctx_5.moveTo(0,120);
+    ctx_5.lineTo(150,120);
+    ctx_5.strokeStyle ='#FFFFFF';
+    ctx_5.stroke();
+
+}else{
+    console.log("No se soporta el contexto 3");
 }
 
 
+
 if(canvas_seis.getContext){
-    console.log("si soporta contexto");
+    var ctx_6 =canvas_seis.getContext("2d");
+    ctx_6.fillStyle = 'rgb(200,200,200)';
+    ctx_6.beginPath();
+    ctx_6.moveTo(75,50);
+    ctx_6.lineTo(100,75);
+    ctx_6.lineTo(100,25);
+    ctx_6.fill();
+
+}else{
+    console.log("No se soporta el contexto 3");
 }
